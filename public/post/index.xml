@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Kjersheim - Projects &amp; Docs</title>
+    <link>http://localhost:1313/post/</link>
+    <description>Recent content in Posts on Kjersheim - Projects &amp; Docs</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 27 May 2025 23:53:00 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Log Project: Building a Personal Learning Log with Tailwind and Vite</title>
+      <link>http://localhost:1313/post/log-project/</link>
+      <pubDate>Tue, 10 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/log-project/</guid>
+      <description>A Tailwind and Vite-powered web project documenting the process of creating a responsive learning log from scratch—design, layout, deployment, and lessons learned.</description>
+    </item>
+    <item>
+      <title>MrRobot-1 VulnHub Challenge – Full Walkthrough</title>
+      <link>http://localhost:1313/post/mrrobot/</link>
+      <pubDate>Thu, 11 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/mrrobot/</guid>
+      <description>A full penetration test walkthrough of the MrRobot-1 VM from VulnHub, including network setup, enumeration, brute force login with Hydra, exploitation via reverse shell, privilege escalation, and root flag discovery.</description>
+    </item>
+    <item>
+      <title>BadStore.net Security Challenge: An Investigative Walkthrough</title>
+      <link>http://localhost:1313/post/badstore-walkthrough/</link>
+      <pubDate>Wed, 10 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/badstore-walkthrough/</guid>
+      <description>Exploring enumeration, SQL injection, privilege escalation, and web security weaknesses through a methodical analysis of the vulnerable BadStore.net web app.</description>
+    </item>
+    <item>
+      <title>Full Stack Project: Recipe Web App Using Node, EJS, and MongoDB</title>
+      <link>http://localhost:1313/post/recipe-webapplication/</link>
+      <pubDate>Tue, 12 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/recipe-webapplication/</guid>
+      <description>A detailed walkthrough of a personal full stack project: building a dynamic recipe manager using Node.js, Express, EJS templating, and MongoDB.</description>
+    </item>
+    <item>
+      <title>Kjersheim Todo App – Simple Frontend Todo Application</title>
+      <link>http://localhost:1313/post/todo-app/</link>
+      <pubDate>Fri, 20 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/todo-app/</guid>
+      <description>An overview of a small frontend project built as part of a full stack development exercise. The app is a clean and minimalistic todo application for managing tasks.</description>
+    </item>
+    <item>
+      <title>Data Networks Episode 17: Making the Network Public</title>
+      <link>http://localhost:1313/post/data-networks-ep17/</link>
+      <pubDate>Tue, 02 May 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/data-networks-ep17/</guid>
+      <description>In this final episode, the lab network is connected to the public internet by bridging Router 3 to the home network. Tasks include identifying local and public IP ranges, updating topology charts, configuring routes and DNS, and verifying connectivity through real-world web and traceroute tests. The episode concludes the full configuration and testing cycle of the lab network.</description>
+    </item>
+    <item>
+      <title>Data Networks Episode 16: IPv6 – Making Things Dual-Stack</title>
+      <link>http://localhost:1313/post/data-networks-ep16/</link>
+      <pubDate>Sat, 22 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/data-networks-ep16/</guid>
+      <description>This episode introduces IPv6 integration into an existing network topology, covering IPv6 subnet planning, manual address configuration on Lubuntu and VyOS devices, enabling dynamic routing with OSPFv3, and verifying connectivity using ping, traceroute, and web/SSH access.</description>
+    </item>
+    <item>
+      <title>Data Networks Episode 15: Configuring Basic DNS Functionality</title>
+      <link>http://localhost:1313/post/data-networks-ep15/</link>
+      <pubDate>Sun, 16 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/data-networks-ep15/</guid>
+      <description>This entry explores DNS queries using &lt;code&gt;dig +trace&lt;/code&gt;, packet capture via Wireshark, and building a local DNS list using the /etc/hosts file. Detailed breakdowns of DNS packet analysis and validation through SSH, HTTP, ping, and traceroute are included.</description>
+    </item>
+    <item>
+      <title>Data Networks Episode 14: WLAN Home Network Analysis</title>
+      <link>http://localhost:1313/post/data-networks-ep14/</link>
+      <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/data-networks-ep14/</guid>
+      <description>A comprehensive wireless network survey using Windows 10 tools and third-party applications like WiFi Analyzer. Includes analysis of 2.4 GHz and 5 GHz channel utilization, router configuration, and implications for performance and interference.</description>
+    </item>
+    <item>
+      <title>Recipe Management Tool</title>
+      <link>http://localhost:1313/post/dsa-recipemanager/</link>
+      <pubDate>Mon, 03 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/dsa-recipemanager/</guid>
+      <description>A python program with a graphical user interface developed using the Tkinter library, for storing and browsing and deleting recipes, and a performance tool for its operations</description>
+    </item>
+    <item>
+      <title>Data Networks Episode 13: Configuring Apache for Distributing Resources</title>
+      <link>http://localhost:1313/post/data-networks-ep13/</link>
+      <pubDate>Sun, 02 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/data-networks-ep13/</guid>
+      <description>Setup and testing of the Apache web server for internal network resource distribution. Includes configuring permissions, analyzing HTTP traffic using Wireshark, and updating router/switch configuration files.</description>
+    </item>
+    <item>
+      <title>Data Networks Episode 12: Controlling Network Configuration</title>
+      <link>http://localhost:1313/post/data-networks-ep12/</link>
+      <pubDate>Sat, 25 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/data-networks-ep12/</guid>
+      <description>Overview of the current network configuration files for routers and switches. Introduction to web interfaces for managing network devices, including GUI access and limitations for Vyos.</description>
+    </item>
+    <item>
+      <title>Data Networks Episode 11: Measuring TCP and UDP</title>
+      <link>http://localhost:1313/post/data-networks-ep11/</link>
+      <pubDate>Sat, 18 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/data-networks-ep11/</guid>
+      <description>Exploring network performance and protocol behavior using iperf and Wireshark, including TCP 3-way handshake analysis and UDP-based DHCP discovery.</description>
+    </item>
+    <item>
+      <title>Data Networks Episode 10: IPv4 Network Address Translation</title>
+      <link>http://localhost:1313/post/data-networks-ep10/</link>
+      <pubDate>Sun, 12 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/data-networks-ep10/</guid>
+      <description>Setting up and verifying many-to-one NAT on VyOS, reflecting on address translation concepts, and analyzing private-to-public traffic flow using Wireshark.</description>
+    </item>
+    <item>
+      <title>Data Networks Episode 9: Network segmentation and firewalls</title>
+      <link>http://localhost:1313/post/data-networks-ep09/</link>
+      <pubDate>Mon, 06 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/data-networks-ep09/</guid>
+      <description>Implementing policy-based segmentation using firewall zones in VyOS, including DHCP setup, OSPF integration, and rule-based traffic filtering.</description>
+    </item>
+    <item>
+      <title>Data Networks Episode 8: Loop detection, part 2. IPv4, routing</title>
+      <link>http://localhost:1313/post/data-networks-ep8/</link>
+      <pubDate>Tue, 28 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/data-networks-ep8/</guid>
+      <description>Enabling dynamic routing with OSPF in a virtual lab environment, including topology updates, router configuration, and security considerations.</description>
+    </item>
+    <item>
+      <title>Data Networks Episode 7: Loop detection, part 1. Ethernet, Spanning Tree Protocol</title>
+      <link>http://localhost:1313/post/data-networks-ep7/</link>
+      <pubDate>Thu, 23 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/data-networks-ep7/</guid>
+      <description>Exploring the first steps of network analysis using Lubuntu virtual machines, ping, traceroute, and pathping.</description>
+    </item>
+    <item>
+      <title>Data Networks Episode 6: Loop Detection – Ethernet and Spanning Tree</title>
+      <link>http://localhost:1313/post/data-networks-ep6/</link>
+      <pubDate>Fri, 17 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/data-networks-ep6/</guid>
+      <description>Exploring Ethernet switching behavior, loops in RING topologies, and enabling Spanning Tree Protocol to mitigate broadcast storms.</description>
+    </item>
+    <item>
+      <title>Data Networks Episode 5: DHCP and Static Routing</title>
+      <link>http://localhost:1313/post/data-networks-ep5/</link>
+      <pubDate>Sun, 12 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/data-networks-ep5/</guid>
+      <description>Extending the network with DHCP, static routing, and an additional router and Lubuntu client.</description>
+    </item>
+    <item>
+      <title>Data Networks Episode 4: IPv4 addresses, subnetting and ARP</title>
+      <link>http://localhost:1313/post/data-networks-ep4/</link>
+      <pubDate>Wed, 08 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/data-networks-ep4/</guid>
+      <description>Adding a router VM, building logical and physical topologies, and connecting Lubuntu VMs via VLANs and ARP using VyOS.</description>
+    </item>
+    <item>
+      <title>Data Networks Episode 3: Ethernet, Switching and VLANs</title>
+      <link>http://localhost:1313/post/data-networks-ep3/</link>
+      <pubDate>Thu, 02 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/data-networks-ep3/</guid>
+      <description>Subnetting exercises, registry lookups, and practical analysis of IP address ranges using real-world tools and registries.</description>
+    </item>
+    <item>
+      <title>Data Networks Episode 2: First switches</title>
+      <link>http://localhost:1313/post/data-networks-ep2/</link>
+      <pubDate>Sat, 28 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/data-networks-ep2/</guid>
+      <description>Setting up and configuring two virtual switches with VLANs and monitoring traffic using Wireshark.</description>
+    </item>
+    <item>
+      <title>Data Networks Episode 1: Setting up virtual machines</title>
+      <link>http://localhost:1313/post/data-networks-ep1/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/data-networks-ep1/</guid>
+      <description>Exploring the first steps of network analysis using Lubuntu virtual machines, ping, traceroute, and pathping.</description>
+    </item>
+    <item>
+      <title>Site Setup and How to Write Articles</title>
+      <link>http://localhost:1313/post/how-i-created-the-blog/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/how-i-created-the-blog/</guid>
+      <description>&lt;p&gt;How this site was built using Hugo and the GitHub-style theme MeiK2333&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

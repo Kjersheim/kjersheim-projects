@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script type="application/javascript" src='http://localhost:1313/js/theme-mode.js'></script>
+    <link rel="stylesheet" href='http://localhost:1313/css/frameworks.min.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/github.min.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/github-style.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/light.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/dark.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/syntax.css' />
+    <title>Full Stack Project: Recipe Web App Using Node, EJS, and MongoDB - Kjersheim - Projects &amp; Docs</title>
+    
+    <link rel="icon" type="image/x-icon" href='http://localhost:1313/images/favicon.ico'>
+    
+    <meta name="theme-color" content="#1e2327">
+
+    
+    
+
+    
+    <meta name="description"
+  content="A detailed walkthrough of a personal full stack project: building a dynamic recipe manager using Node.js, Express, EJS templating, and MongoDB." />
+<meta name="keywords"
+  content='' />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="http://localhost:1313/post/recipe-webapplication/" />
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Full Stack Project: Recipe Web App Using Node, EJS, and MongoDB - Kjersheim - Projects &amp; Docs" />
+<meta name="twitter:description"
+  content="A detailed walkthrough of a personal full stack project: building a dynamic recipe manager using Node.js, Express, EJS templating, and MongoDB." />
+<meta name="twitter:site" content="http://localhost:1313/" />
+<meta name="twitter:creator" content="" />
+<meta name="twitter:image"
+  content="http://localhost:1313/">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Full Stack Project: Recipe Web App Using Node, EJS, and MongoDB - Kjersheim - Projects &amp; Docs">
+<meta property="og:description"
+  content="A detailed walkthrough of a personal full stack project: building a dynamic recipe manager using Node.js, Express, EJS templating, and MongoDB." />
+<meta property="og:url" content="http://localhost:1313/post/recipe-webapplication/" />
+<meta property="og:site_name" content="Full Stack Project: Recipe Web App Using Node, EJS, and MongoDB" />
+<meta property="og:image"
+  content="http://localhost:1313/">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+<meta property="article:published_time" content="2023-12-12 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body>
+  <div style="position: relative">
+  <header class="Header js-details-container Details px-3 px-md-4 px-lg-5 flex-wrap flex-md-nowrap open Details--on">
+    <div class="Header-item mobile-none" style="margin-top: -4px; margin-bottom: -4px;">
+      <a class="Header-link" href="http://localhost:1313/">
+        <img class="octicon" height="32" width="32" src="/images/avatar.svg">
+      </a>
+    </div>
+    <div class="Header-item d-md-none">
+      <button class="Header-link btn-link js-details-target" type="button"
+        onclick="document.querySelector('#header-search').style.display = document.querySelector('#header-search').style.display == 'none'? 'block': 'none'">
+        <svg height="24" class="octicon octicon-three-bars" viewBox="0 0 16 16" version="1.1" width="24">
+          <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z">
+          </path>
+        </svg>
+      </button>
+    </div>
+    <div style="display: none;" id="header-search"
+      class="Header-item Header-item--full flex-column flex-md-row width-full flex-order-2 flex-md-order-none mr-0 mr-md-3 mt-3 mt-md-0 Details-content--hidden-not-important d-md-flex">
+      <div
+        class="Header-search header-search flex-auto js-site-search position-relative flex-self-stretch flex-md-self-auto mb-3 mb-md-0 mr-0 mr-md-3 scoped-search site-scoped-search js-jump-to">
+        <div class="position-relative">
+          
+          <form target="_blank" action="https://www.google.com/search" accept-charset="UTF-8" method="get"
+            autocomplete="off">
+            <label
+              class="Header-search-label form-control input-sm header-search-wrapper p-0 js-chromeless-input-container header-search-wrapper-jump-to position-relative d-flex flex-justify-between flex-items-center">
+              <input type="text"
+                class="Header-search-input form-control input-sm header-search-input jump-to-field js-jump-to-field js-site-search-focus js-site-search-field is-clearable"
+                name="q" value="" placeholder="Search" autocomplete="off">
+              <input type="hidden" name="q" value="site:http://localhost:1313/">
+            </label>
+          </form>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="Header-item Header-item--full flex-justify-center d-md-none position-relative">
+      <a class="Header-link " href="http://localhost:1313/">
+        <img class="octicon octicon-mark-github v-align-middle" height="32" width="32" src="/images/avatar.svg">
+      </a>
+    </div>
+    <div class="Header-item" style="margin-right: 0;">
+      <a href="javascript:void(0)" class="Header-link no-select" onclick="switchTheme()">
+        <svg style="fill: var(--color-profile-color-modes-toggle-moon);" class="no-select" viewBox="0 0 16 16"
+          version="1.1" width="16" height="16">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M4.52208 7.71754C7.5782 7.71754 10.0557 5.24006 10.0557 2.18394C10.0557 1.93498 10.0392 1.68986 10.0074 1.44961C9.95801 1.07727 10.3495 0.771159 10.6474 0.99992C12.1153 2.12716 13.0615 3.89999 13.0615 5.89383C13.0615 9.29958 10.3006 12.0605 6.89485 12.0605C3.95334 12.0605 1.49286 10.001 0.876728 7.24527C0.794841 6.87902 1.23668 6.65289 1.55321 6.85451C2.41106 7.40095 3.4296 7.71754 4.52208 7.71754Z">
+          </path>
+        </svg>
+      </a>
+    </div>
+  </header>
+</div>
+
+  <div id="search-result" class="container-lg px-3 new-discussion-timeline" style="display: none;">
+</div>
+
+  
+<div class="application-main">
+  <div>
+  <main>
+    <div class="gisthead pagehead bg-gray-light pb-0 pt-3 mb-4">
+      <div class="px-0">
+        <div class="mb-3 d-flex px-3 px-md-3 px-lg-5">
+          <div class="flex-auto min-width-0 width-fit mr-3">
+            <div class="d-flex">
+              <div class="d-none d-md-block">
+                <a class="avatar mr-2 flex-shrink-0" href="http://localhost:1313/">
+                  <img class=" avatar-user"
+                    src="/images/avatar.png"
+                    width="32" height="32"></a>
+              </div>
+              <div class="d-flex flex-column">
+                <h1 class="break-word f3 text-normal mb-md-0 mb-1">
+                  <span class="author">
+                    <a href="http://localhost:1313/">Andreas</a>
+                  </span>
+                  <span class="path-divider">/</span>
+                  <strong class="css-truncate css-truncate-target mr-1" style="max-width: 410px">
+                    <a href="http://localhost:1313/post/recipe-webapplication/">Full Stack Project: Recipe Web App Using Node, EJS, and MongoDB</a>
+                  </strong>
+                </h1>
+                <div class="note m-0">
+                  Created <relative-time datetime="Tue, 12 Dec 2023 00:00:00 &#43;0000"
+                    class="no-wrap">
+                    Tue, 12 Dec 2023 00:00:00 &#43;0000</relative-time>
+
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-lg px-3 new-discussion-timeline">
+      <div class="repository-content gist-content">
+        <div>
+          <div class="js-gist-file-update-container js-task-list-container file-box">
+            <div id="file-pytest" class="file my-2">
+              <div id="post-header" class="file-header d-flex flex-md-items-center flex-items-start sticky-header" style="z-index: 2">
+                <div class="file-info d-flex flex-md-items-center flex-items-start flex-order-1 flex-auto">
+                  <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
+                    
+                    <summary id="toc-toggle" onclick="clickToc()" class="btn btn-octicon m-0 mr-2 p-2">
+                      <svg aria-hidden="true" viewBox="0 0 16 16" height="16" width="16" class="octicon octicon-list-unordered">
+                        <path fill-rule="evenodd" d="M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM3 8a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"></path>
+                      </svg>
+                    </summary>
+                    <details-menu class="SelectMenu" id="toc-details" style="display: none;">
+                      <div class="SelectMenu-modal rounded-3 mt-1" style="max-height: 340px;">
+                        <div class="SelectMenu-list SelectMenu-list--borderless p-2" style="overscroll-behavior: contain;" id="toc-list">
+                        </div>
+                      </div>
+                    </details-menu>
+                      4995 Words
+                    
+
+                  </div>
+                  <div class="file-actions flex-order-2 pt-0">
+                    
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="Box-body px-5 pb-5" style="z-index: 1">
+                <article class="markdown-body entry-content container-lg"><h1 id="project-overview">Project overview</h1>
+<p><a href="https://github.com/Kjersheim/recipe-webapp">Link to repository</a></p>
+<p>Full Stack Optional Project
+Creating a recipe-webapp using Node, Mongoose, EJS and MongoDB.</p>
+<pre tabindex="0"><code>Contents
+1	Crafting a Solid Foundation	
+2	Prototyping the Project	
+2.1	Paper Sketches	
+3	Working on the Design and Starting to Structure Files	
+3.1	The Folder Structure	
+3.2	Front-End Folder Structure and Files	
+3.3	Back-End Folder Structure and Files	
+4	Project Timeline	
+5	Database Structure	
+6	Web App Functionality	
+6.1	Interface	
+7	REST API Endpoints	
+7.1	GET / and GET /about	
+7.2	GET /browse	
+7.3	GET /chosenrecipe/:id	
+7.4	GET /create	
+7.5	POST /create	
+8	Helper Functions	
+9	Strengths, Weaknesses, Final Reflections	
+</code></pre><h1 id="1crafting-a-solid-foundation">1	Crafting a Solid Foundation</h1>
+<p>As part of my Full Stack Programming course, I embarked on a journey into JavaScript, a lan-guage I had not previously explored. While I possessed foundational knowledge of HTML and CSS from prior courses, my experience had been limited to personal web development projects. However, the early course assignments sparked my interest in JavaScript, prompting me to en-roll in a dedicated JavaScript course.</p>
+<p>This learning venture involved resources like javascript.info and Scrimba, where I honed my skills by creating various small applications, including calculators and simple games. Scrimba introduced me to EJS (Embedded JavaScript), a fusion with HTML that intrigued me and later found its place in my project. For this project in particular, a great source of help was gained from using info from Raddy&rsquo;s food recipe project <a href="https://github.com/RaddyTheBrand/RecipeBlog-MongoDB-Node.js">which can be found here.</a></p>
+<p>My experiences with the Scrimba course included an examination of JavaScript techniques, some of which required substantial effort to grasp fully. Leveraging online resources, such as tutorials and guides, became a valuable aspect of my learning journey.
+The genesis of this project emerged from a personal desire—a desire to fill an empty green rec-ipe book in my kitchen. Despite my love for cooking and recipe preservation, the book re-mained blank. Creating a web application to store and access recipes became an appealing so-lution, with MongoDB chosen as the database. While the initial vision included image upload-ing, practical considerations led to a more streamlined approach. The primary goal was to es-tablish a robust foundation for the project, emphasizing structured folder organization and adherence to best practices.
+This documentation aims to provide an in-depth understanding of the project&rsquo;s architecture, components, and functionality. It chronicles the development journey and offers insights into its inner workings.</p>
+<h1 id="2prototyping-the-project">2	Prototyping the Project</h1>
+<p>The project journey commenced with a pragmatic blend of paper and digital prototyping tech-niques. As a student project, it began with a focus on exploring ideas and formulating a com-prehensive plan. The initial phase involved crafting a paper prototype, serving as a rudimentary yet effective tool for outlining the fundamental features of the project. This manual approach facilitated swift ideation without the complexities of intricate digital tools.</p>
+<p>While contemplating the shift towards a more comprehensive digital prototype using tools like Figma, which we had employed in previous courses, or InVision, a choice for some of my personal projects, the development took a different path. Instead, substantial time was devot-ed to refining the HTML and CSS design. The goal was to create a visually appealing and func-tional user interface that resonated with the project&rsquo;s core objectives. The pursuit of a clean and user-friendly aesthetic presented its challenges, yet the project&rsquo;s development maintained its course.</p>
+<p>Despite not being fully content with the visual aspects of the project and facing time con-straints, the design remained suitable, adaptable for both larger and smaller user interfaces. The evolving framework, coupled with the organization of project files and directories, trans-formed into a well-defined vision that continued to be iteratively developed. While recognizing the merits of employing advanced prototyping tools, the project&rsquo;s essence lay in its role as a personal endeavor, reflecting the journey of a student developer navigating the intricacies of full-stack development.</p>
+<h2 id="21paper-sketches">2.1	Paper Sketches</h2>
+<p>The initial phase of design and prototyping commenced with a manual approach involving pencil sketches on paper. The primary objective was to outline the fundamental structural components of the web page, with a particular emphasis on responsive design catering to both small mobile resolutions and larger desktop screens. These sketches served as the foundational framework upon which the project&rsquo;s visual elements would be built (Figure 1).</p>
+<p><img src="https://github.com/Kjersheim/recipe-webapp/assets/90902439/a6c5f269-e6eb-442c-afc6-64f279bc20e1" alt="image"></p>
+<p>During the paper-based prototyping phase, careful consideration was given to the precise placement of essential elements, including the navigation system and primary content sections. Furthermore, functional aspects, such as the integration of a mobile-resolution hamburger menu, were investigated. Leveraging insights from past experiences, the decision was made to adopt the hamburger menu design pattern, a successful strategy employed in prior web devel-opment projects (Figure 2).</p>
+<p><img src="https://github.com/Kjersheim/recipe-webapp/assets/90902439/e77eee71-567c-46e5-b925-75dd062df630" alt="image"></p>
+<p>To refine the design further, miniaturized representations of individual elements were crafted, and a canvas was employed to experiment with different layout arrangements (Figure 3 &amp; 4). This iterative approach allowed for the exploration of diverse design concepts and their impact on the overall user experience. Concurrently, this phase ran in parallel with the development of HTML and CSS, significantly contributing to the evolution of the final design.</p>
+<p><img src="https://github.com/Kjersheim/recipe-webapp/assets/90902439/cda47589-a0be-4605-8420-f44fb1486b2e" alt="image"></p>
+<p><img src="https://github.com/Kjersheim/recipe-webapp/assets/90902439/17bc8d64-d39f-4202-b965-f88c6af21613" alt="image"></p>
+<h1 id="3working-on-the-design-and-starting-to-structure-files">3	Working on the Design and Starting to Structure Files</h1>
+<p>In tandem with the development of the design, various digital tools were used to enhance the visual elements of the project. Online resources such as <a href="https://app.haikei.app/">https://app.haikei.app/</a> were employed for generating and testing shapes, <a href="http://www.icons8.com">http://www.icons8.com</a> served as a valuable source for icons, and testing color palettes through tools like <a href="https://pigment.shapefactory.co/">https://pigment.shapefactory.co/</a>. These digital assets plays an important role in shaping the project&rsquo;s aesthetics and visual identity, as you have so many generated combinations and you can quickly see what would work – and what would maybe not work. As described above, instead of using digital tools I went into building the main HTML page and starting the CSS so I could work with these files while starting the pro-ject framework structure. With better time it would likely be very beneficial to use Figma or InVisio to create a functional and clean design.</p>
+<p>So then, simultaneously, a main focus was directed toward creating an organized folder struc-ture for the project. The primary objective was to adhere to best practices, drawing inspiration from exemplar projects that effectively segregated backend JavaScript and Node components into distinct directories. Furthermore, the client-side assets that were meant to be publicly ac-cessible were organized within a dedicated public folder. Discussions with fellow students and prior experience from publishing E08 Part 3 underscored the significance of creating a robust foundational structure from the project&rsquo;s inception. This early emphasis on structure has prov-en instrumental in maintaining a clear and efficient development process.</p>
+<h2 id="31the-folder-structure">3.1	The Folder Structure</h2>
+<p>The project adopts a structured folder hierarchy to enhance organization, code maintainability, and efficient development. This hierarchical structure is thoughtfully designed to achieve spe-cific objectives, playing a big role in the overall organization of the project.
+At the root level of the project, several essential files and directories are located. Among these, &ldquo;app.js&rdquo; serves as the entry point for the application and configures the Express.js server. The &ldquo;package.json&rdquo; file specifies project dependencies, scripts, and metadata, simplifying package management and automating installation procedures. For enhanced security, sensitive infor-mation like database connection strings is stored in the &ldquo;.env&rdquo; file, thus preventing such data from being included in version control.</p>
+<p>The project&rsquo;s folder structure extends into directories like &ldquo;public,&rdquo; &ldquo;server,&rdquo; and &ldquo;views.&rdquo; The &ldquo;public&rdquo; directory acts as a repository for publicly accessible assets, including stylesheets, client-side JavaScript, and images. This separation of assets from server-side code ensures efficient client-side delivery while adhering to security best practices. In contrast, the &ldquo;server&rdquo; directory houses server-related scripts and logic, including routes, controllers, and database interactions. This compartmentalization defines the server&rsquo;s functionality, promoting a clear separation of concerns between server and client components. Lastly, the &ldquo;views&rdquo; directory contains EJS (Em-bedded JavaScript) templates that define the application&rsquo;s front-end views. This structural seg-regation between server and client elements, facilitated by these specific folders, improves code maintainability, readability, and overall project organization.</p>
+<p>The rationale behind structuring the folders in this manner is multifaceted. Firstly, it promotes modularity by segregating different aspects of the project into distinct directories, simplifying development by isolating and maintaining individual components. Clarity is another essential consideration, as an organized structure enhances code readability and comprehension. This structured approach allows developers to efficiently locate and work on specific parts of the application without confusion.
+Furthermore, this structure aligns with common web development conventions, facilitating col-laboration among team members. Security is also a priority, with sensitive data stored in the &ldquo;.env&rdquo; file, enhancing application security by preventing the exposure of critical information through version control. Additionally, the presence of a &ldquo;.gitignore&rdquo; file ensures that unneces-sary files are excluded from version control, reducing repository clutter and the risk of inad-vertent exposure of sensitive data.</p>
+<p>In summary, the well-designed folder hierarchy establishes the groundwork for an organized and maintainable project. It streamlines development processes, paving the way for future en-hancements and effective collaboration.</p>
+<h2 id="32front-end-folder-structure-and-files">3.2	Front-End Folder Structure and Files</h2>
+<p>As the project took shape, attention turned to organizing the front-end resources efficiently. The front-end folder structure was designed with the goal of maintaining a clear separation of concerns and promoting reusability. At the heart of this structure is the use of the EJS templat-ing engine, which played a big role in achieving modularity and consistency throughout the front-end components.</p>
+<p>Views Folder: The &ldquo;views&rdquo; folder is central to the front-end architecture, housing the EJS tem-plates that define the application&rsquo;s views. Each EJS file represents a specific page or view within the application. This approach simplifies the process of creating new pages, as it allows for the reuse of the main layout while only altering the content within the <!-- raw HTML omitted --> element. This mod-ularity enhances code maintainability and readability, ensuring that common elements like headers, footers, and navigation menus remain consistent across all pages.</p>
+<p>Layouts Folder: Within the &ldquo;views&rdquo; folder, a &ldquo;layouts&rdquo; subfolder contains the primary layout template used throughout the application. This layout template includes the essential struc-ture of the HTML document, including the <!-- raw HTML omitted --> section with metadata, CSS references, and the <!-- raw HTML omitted --> element with navigation and the footer. The use of a consistent layout template simplifies the addition of new pages, ensuring a uniform look and feel across the application and easier modifications if that is needed.</p>
+<p>Static Assets: Publicly accessible static assets, such as stylesheets, client-side JavaScript, and images, are stored in the &ldquo;public&rdquo; folder. This separation of assets from server-side code allows for efficient delivery to the client while adhering to security best practices. Stylesheets are or-ganized and categorized to maintain clean and maintainable CSS code, enhancing overall code quality.</p>
+<p>EJS Files and Main Content: Within the &ldquo;views&rdquo; folder, EJS files define the content of each page. These files incorporate dynamic data, making use of EJS&rsquo;s templating capabilities to inject val-ues into the HTML markup. Additionally, EJS is employed for smaller changes, such as dynami-cally updating the title of each page to reflect its content or purpose.</p>
+<p>In summary, the front-end folder structure and file organization in the project follow a modular and maintainable approach. The use of EJS templates for views, consistent layouts, and a clear separation of static assets contribute to a cohesive and user-friendly front-end architecture. This structure streamlines the addition of new pages and ensures a harmonious user experi-ence across the application.</p>
+<h2 id="33back-end-folder-structure-and-files">3.3	Back-End Folder Structure and Files</h2>
+<p>The back-end folder structure and files play a vital role in organizing the server-side compo-nents of the project. These components are designed to handle data management, routing, and server functionality efficiently.</p>
+<p>Server Folder: The &ldquo;server&rdquo; folder is the core of the back-end architecture, containing scripts and logic that drive the server&rsquo;s functionality. Key components within this directory include:</p>
+<p>Routes: The &ldquo;routes&rdquo; subfolder houses route definitions that determine how the server re-sponds to various client requests. These routes handle tasks such as rendering views, pro-cessing form data, and interacting with the database.</p>
+<p>Controllers: Within the &ldquo;controllers&rdquo; subfolder, controller scripts are responsible for processing incoming requests, interacting with the database, and orchestrating the flow of data between the server and client. This separation of concerns ensures a clean and organized codebase.</p>
+<p>Helpers: Helper scripts, located within the &ldquo;helpers&rdquo; subfolder, are used to intercept and pro-cess incoming requests before they reach the route handlers. Middleware functions enhance the server&rsquo;s functionality by performing tasks like authentication, data validation, and error handling.</p>
+<p>Database Interactions: The server-side code interacts with the MongoDB database through ded-icated scripts and modules. These interactions are encapsulated within the &ldquo;models&rdquo; subfolder, promoting modularity and maintainability.</p>
+<p>The division of the back-end structure into specific directories and components serves multiple purposes. Firstly, it promotes modularity by separating different aspects of the server into dis-crete folders, simplifying development and maintenance. This separation of concerns enhances code readability, as I can quickly locate and work on specific parts of the server without confu-sion.</p>
+<p>Additionally, this organized structure aligns with common web development conventions, facili-tating collaboration among team members, it that were to be the case in a different project.</p>
+<h2 id="4project-timeline">4	Project Timeline</h2>
+<p>Scheduling and structuring work in a project are critical components of successful project management. A well-defined timeline provides a clear roadmap for project development, ensuring that tasks are completed efficiently and in a systematic manner. It aids in tracking progress, meeting deadlines, and allocating resources effectively. In the context of this project, a structured timeline played a role in prioritizing and structuring the tasks within the various stages of ideation, design, development, and testing. The following table outlines the key milestones and activities during the project&rsquo;s phases.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Dates</th>
+          <th>Duration</th>
+          <th>Focus</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>14- 15th Oct.</td>
+          <td>5 hours</td>
+          <td>Research and Ideation</td>
+      </tr>
+      <tr>
+          <td>20th Oct.</td>
+          <td>3 hours</td>
+          <td>Design Iterations and Logo Creation</td>
+      </tr>
+      <tr>
+          <td>21st Oct.</td>
+          <td>4 hours</td>
+          <td>Paper Models and Directory Setup</td>
+      </tr>
+      <tr>
+          <td>27-28th Oct.</td>
+          <td>8-10 hours</td>
+          <td>Directory setup, design testing, adding initial files app.js routes and controller file.</td>
+      </tr>
+      <tr>
+          <td>2nd Nov.</td>
+          <td>2 hours</td>
+          <td>Logo creation testing, AI and Canvas</td>
+      </tr>
+      <tr>
+          <td>6th Nov.</td>
+          <td>6-8 hours</td>
+          <td>Working on app.js and routes for each html page, and design HTML/CSS testing. Setting up MongoDB and database js</td>
+      </tr>
+      <tr>
+          <td>7th Nov.</td>
+          <td>5 hours</td>
+          <td>HTML/CSS, setting up GET controllers for all pages</td>
+      </tr>
+      <tr>
+          <td>11-12th Nov.</td>
+          <td>10 hours</td>
+          <td>HTML/CSS mainpage + create form page design.</td>
+      </tr>
+      <tr>
+          <td>13th Nov.</td>
+          <td>9-10 hours</td>
+          <td>Setting up Recipe.js model, updating packages used and testing with create form</td>
+      </tr>
+      <tr>
+          <td>14th Nov.</td>
+          <td>8 hours</td>
+          <td>Testing form design, adding helper functions. Updating GET methods.</td>
+      </tr>
+      <tr>
+          <td>20th Nov.</td>
+          <td>9 hours</td>
+          <td>Testing Create page with database, translating and adding recipes. Testing flash messages and bodyparser. Removing idea to add upload users own images, too much work.</td>
+      </tr>
+      <tr>
+          <td>21st Nov.</td>
+          <td>10 hours</td>
+          <td>Working with the browse page, testing to fetch DB data.</td>
+      </tr>
+      <tr>
+          <td>24th Nov.</td>
+          <td>10 hours</td>
+          <td>Testing designs on browse fetching parts from DB and also routing chosen recipes, creating the chosenrecipe page and designing.</td>
+      </tr>
+      <tr>
+          <td>27th-28th Nov.</td>
+          <td>15-20 hours</td>
+          <td>Adding more space on both sides of the design, empty columns.  Working with the design, trying to make it more responsive.</td>
+      </tr>
+      <tr>
+          <td>4th Dec.</td>
+          <td>8 hours</td>
+          <td>Working on design of recipe cards and recipe page, images and checking code.</td>
+      </tr>
+      <tr>
+          <td>8th Dec.</td>
+          <td>9 hours</td>
+          <td>Cleaning up code, adding more comments to describe functionality, publishing on Render.</td>
+      </tr>
+      <tr>
+          <td>11th Dec.</td>
+          <td>10 hours</td>
+          <td>Working on re-writing documentation, planning and adding info describing the project</td>
+      </tr>
+      <tr>
+          <td>Total	110-120 hours</td>
+          <td></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<h1 id="5database-structure">5	Database Structure</h1>
+<p>The RecipeApp project relies on a MongoDB database to store and manage recipe data. The database, named &ldquo;RecipeApp,&rdquo; is designed to efficiently organize and retrieve recipe information. In this section, we will explore the structure of the MongoDB database and its collections.</p>
+<p><img src="https://github.com/Kjersheim/recipe-webapp/assets/90902439/a2e75a50-cb27-4aa1-a241-983a5f3ef182" alt="image"></p>
+<p>The central collection in the RecipeApp database is named &ldquo;recipes.&rdquo; This collection stores individual recipe entries, each represented as a document with specific fields. Here&rsquo;s an overview of the fields within the &ldquo;recipes&rdquo; collection:</p>
+<ul>
+<li>_id: A unique identifier automatically generated by MongoDB for each recipe entry. This field serves as the primary key for the documents.</li>
+<li>name: The name of the dish, which provides a concise title for the recipe.</li>
+<li>description: A detailed description of how the dish is made. This field contains the step-by-step in-structions for preparing the recipe.</li>
+<li>ingredients: An array containing the list of ingredients required for the recipe. Each ingredient is stored as a string within the array.</li>
+<li>category: The category to which the recipe belongs. It helps in classifying recipes into different groups, such as &ldquo;Baking,&rdquo; &ldquo;Meat,&rdquo; &ldquo;Vegan,&rdquo; or &ldquo;Dessert.&rdquo;</li>
+<li>__v: A version key added by MongoDB&rsquo;s Mongoose library to handle document versioning. This field helps track changes to documents over time.</li>
+</ul>
+<h1 id="6web-app-functionality">6	Web App Functionality</h1>
+<p>The app.js file serves as the entry point of the web application and is responsible for configur-ing the Express.js server. It imports various modules and middleware to handle different as-pects of the application. One of the middleware used is express-session, which enables session management for user authentication and flash messages. The dotenv middleware is used to load environment variables from the .env file, enhancing security by keeping sensitive data like database connection strings out of version control.</p>
+<p>To establish a connection to the MongoDB database, the mongoose module is used. The mon-goose connection is initiated in the database.js file, which is located in the models directory. This file defines the database schema and connection details. It exports the established con-nection, allowing other parts of the application, including controllers and routes, to interact with the database using Mongoose models.</p>
+<p>In the controllers directory, the recipeController.js file defines route handlers for various end-points related to recipes. These handlers use Mongoose models and the mongoose connection established in database.js to perform CRUD (Create, Read, Update, Delete) operations on the database. For example, when a user submits a new recipe through the web interface, the cre-ateRecipe function in recipeController.js handles the request by creating a new recipe docu-ment in the MongoDB database.</p>
+<p>App.js also configures EJS view engine for rendering dynamic web pages. It sets the layout file for EJS views to &lsquo;./layouts/main&rsquo;, which specifies the structure and layout of the rendered HTML. This layout file allows for consistent headers, footers, and navigation menus across dif-ferent pages of the application, ensuring a unified user experience.</p>
+<p>The view engine is set to &rsquo;ejs&rsquo;, indicating that EJS will be used to render dynamic content within the layout structure. EJS enables the inclusion of JavaScript code within HTML templates, allow-ing for dynamic data rendering and presentation.</p>
+<p><img src="https://github.com/Kjersheim/recipe-webapp/assets/90902439/b033270d-cf5c-4c5e-9181-cf912aabb434" alt="image"></p>
+<p>Additionally, the app.js file sets up routes for different parts of the application using Ex-press.js&rsquo;s routing system. For instance, the /browse route is mapped to the browseRecipes func-tion in the recipeController.js file, which retrieves recipes from the database and renders them on the browse page.
+Overall, the app.js file, along with middleware, connects the different parts of the application, allowing it to handle user requests, interact with the database, and render dynamic web pages based on user input. This architecture separates concerns, making the codebase organized and maintainable.</p>
+<h2 id="61interface">6.1	Interface</h2>
+<p><img src="https://github.com/Kjersheim/recipe-webapp/assets/90902439/b17e40b7-5954-415c-ba64-83e0e60d3919" alt="image"></p>
+<p>Starting at the homepage, the main layout is used – as for all other pages on the app – and the homepage contents are injected to it using EJS. I ended up with a design as shown above, trying to keep it as simple as possible. From the home page navigation from the nav-bar and more visible buttons can be used for redirection to the browse or create page.</p>
+<p><img src="https://github.com/Kjersheim/recipe-webapp/assets/90902439/08ff0a73-1e19-4cbb-8ba4-874655107172" alt="image">
+The browse page, as shown in a phone resolution in Figure 8, fetches the recipes already added from the database and parses them in their own cards vertically aligned down the page. It con-tains an image based on the category, a title and a short description based on the description stored in the database.</p>
+<p><img src="https://github.com/Kjersheim/recipe-webapp/assets/90902439/2d2ba945-8cea-41d5-b344-005ab2386617" alt="image"></p>
+<p>The Create page contains a form where the user can insert the name, description of how to make, add ingredients and selecting category, before submitting the recipe to be added in the database. Having a clientside javascript connected to the + Ingredient button is also vital, so the user can click the button to add more fields to fill in more ingredients.
+The code selects DOM elements using &lsquo;getElementById&rsquo; and &lsquo;querySelector&rsquo;. It sets up an event listener on a button (&lsquo;addIngredientsButton&rsquo;).    When the button is clicked, it clones the first &lsquo;ingredientDiv&rsquo;, clears its input value, and appends it to the &lsquo;ingredientList&rsquo;</p>
+<h1 id="7rest-api-endpoints">7	REST API Endpoints</h1>
+<p>In this section, I describe the technical details of the RecipeApp&rsquo;s REST API. The API serves as the backbone for communication between the client-side application and the server, facilitating data retrieval and manipulation. Below, it is provide documentation for each REST endpoint, along with essential code snippets highlighting key components of their functionality.</p>
+<h2 id="71get--and-get-about">7.1	GET / and GET /about</h2>
+<p>Description &amp; Functionality: The GET / and GET /about endpoint handles GET requests to the root path, rendering the application&rsquo;s homepage for users to explore recipes, and the about page with some project info. These endpoints interact with the index.ejs and about.ejs tem-plates to render the pages.</p>
+<p><img src="https://github.com/Kjersheim/recipe-webapp/assets/90902439/51c7d2fc-1a8e-4c87-8f0e-d2eb1a149793" alt="image"></p>
+<p>The homepage itself describes the purpose of the page briefly and adding navigation to the browse- and add-recipe sections of the application. The about page serves as a backstory to the web application.</p>
+<p><img src="https://github.com/Kjersheim/recipe-webapp/assets/90902439/431eec2a-997b-44b0-a310-a125d1f472e7" alt="image"></p>
+<h2 id="72get-browse">7.2	GET /browse</h2>
+<p>Description &amp; Functionality: The GET /browse endpoint serves GET requests to the /browse path, providing users with access to the browse page. This page offers a column of recipe cards, show with category types such as Baking, Meat, Vegan, and Dessert as well as the dish name and a short description.</p>
+<p>When users navigate to the /browse path, the server&rsquo;s response is characterized by the follow-ing actions. It initiates a query to the database, specifically utilizing Recipe.find(), to retrieve a collection of recipes. To help the user experience, the server also integrates two essential help-er functions: getRecipeImage and shortenDescription. These helpers serve a dual purpose:</p>
+<p>getRecipeImage: Dynamically determines and attaches images to each recipe card based on its category. This ensures that the browse page showcases mouthwater-ing visuals that correspond to each recipe.</p>
+<p>shortenDescription: Condenses lengthy recipe descriptions into succinct previews, optimizing space on the recipe cards while providing a brief glimpse into the culi-nary wonders offered.</p>
+<p>Finally, the server uses the res.render method to render the browse.ejs template. This template forms the foundation of the browse page, which is adorned with a visually pleasing display of recipe cards. Alongside the cards, users encounter striking images, thanks to the getReci-peImage helper, and concise descriptions that spark their curiosity, courtesy of the shortenDe-scription function.</p>
+<h2 id="73get-chosenrecipeid">7.3	GET /chosenrecipe/:id</h2>
+<p>The GET /chosenrecipe/:id endpoint serves as a gateway for users to access comprehensive details about a particular recipe. Upon receiving a user request, the server extracts the :id parameter from the URL, allowing it to pinpoint the specified recipe. Subsequently, a database query is initiated using Recipe.findById(recipeId) to retrieve the in-depth recipe information.</p>
+<p><img src="https://github.com/Kjersheim/recipe-webapp/assets/90902439/c7948e18-0a9a-4f12-90f3-1dc2f178f4ac" alt="image"></p>
+<p>In the event that the desired recipe is not found, the server responds with a 404 Not Found error. However, when the requested recipe is successfully located, the server proceeds to render the chosenrecipe.ejs template, which serves as the canvas for presenting the details from the database for the selected recipe. To enhance the visual appeal of the page, the getRecipeImage helper-function finds and helps displaying a category-relevant image.</p>
+<h2 id="74get-create">7.4	GET /create</h2>
+<p>Description &amp; Functionality: The GET /create endpoint handles GET requests for accessing the recipe creation form. It renders a form where users can input and submit new recipes. This endpoint interacts with the create.ejs template, serving as the starting point for adding new recipes. As part of its functionality, this endpoint utilizes flash messages to enhance user inter-action. When users access this page, they can encounter two types of flash messages, depend-ing on the context:</p>
+<p><img src="https://github.com/Kjersheim/recipe-webapp/assets/90902439/623c9ecf-e9a8-42b5-85ee-fae2b4dabbd4" alt="image"></p>
+<p>Flash Error Messages: In situations where errors occur during form submission or database op-erations, flashError messages are utilized to communicate the issue to the user. These messag-es offer clear and informative feedback, helping users identify and address any problems.</p>
+<p>Flash Success Messages: Following a successful recipe addition, flashCreate messages are em-ployed to inform users of the successful creation of their recipe. These messages serve as con-firmations, enhancing user satisfaction and providing instant feedback on the action&rsquo;s outcome. The endpoint proceeds to render the &ldquo;create.ejs&rdquo; template, designed to accommodate these flash messages. It effectively communicates the purpose of the page, allowing users to input and submit new recipes. The incorporation of flash messages ensures that users are promptly informed of any errors and successful recipe additions, contributing to an intuitive and user-friendly recipe creation process.</p>
+<h2 id="75post-create">7.5	POST /create</h2>
+<p>Description:
+The POST /create endpoint is a fundamental component of the RecipeApp, responsible for processing POST requests submitted by users when they create and submit a new recipe. This endpoint handles the intricate process of taking user-provided data, such as the recipe&rsquo;s name, description, ingredients, and category, and integrates it into the application&rsquo;s database.</p>
+<p><img src="https://github.com/Kjersheim/recipe-webapp/assets/90902439/4a01c73c-199a-4343-9994-ff6f16a69e38" alt="image"></p>
+<p>Functionality:
+Recipe Object Creation: Upon receiving a POST request to /create, the server invokes the rec-ipeController.createAdd function. Inside this function, a new Recipe object is created using data extracted from the request body. This includes the recipe&rsquo;s name, description, ingredients, and category.</p>
+<p>Database Integration: The newly created Recipe object, referred to as newRecipe, is prepared for integration into the database. The controller invokes the await newRecipe.save() method, which effectively saves the recipe to the RecipeApp&rsquo;s MongoDB database. This step ensures that the user&rsquo;s recipe submission becomes a permanent part of the application&rsquo;s recipe collec-tion, directly able to be viewed by other users. In a real life application I would add moderation and approval to this for security reasons.
+Flash Messages: As described in the previous section about GET /create.</p>
+<p>Redirection: After successfully saving the new recipe to the database, the controller employs the res.redirect(&rsquo;/create&rsquo;) method to redirect the user back to the &ldquo;create.ejs&rdquo; page. This serves as a confirmation of the recipe addition and allows users to continue adding more recipes if desired.
+Error Handling: In the event of an error during recipe creation or database operations, the con-troller logs the error and generates a flashError message, providing informative feedback to the user. The user is then redirected back to the &ldquo;create.ejs&rdquo; page, where they can address the is-sue or seek assistance.</p>
+<h1 id="8helper-functions">8	Helper Functions</h1>
+<p>The project incorporates two essential helper functions, namely getRecipeImage and shortenDescription, which significantly contribute to enhancing the user experience and inter-face of the application. These helper functions serve distinct yet complementary purposes, aimed at improving the presentation and visual appeal of the recipes showcased within the application.</p>
+<p>getRecipeImage Function: The getRecipeImage function help in dynamically retrieving and dis-playing recipe images based on their respective categories. It accepts two parameters: category and context. The category parameter represents the category of a recipe, such as &ldquo;Baking,&rdquo; &ldquo;Meat,&rdquo; &ldquo;Vegan,&rdquo; or &ldquo;Dessert,&rdquo; while the context parameter defines the context in which the function operates, with a default value of &lsquo;/&rsquo;.
+Internally, the function employs a switch statement to determine the appropriate image URL based on the provided category. For instance, if a recipe belongs to the &ldquo;Baking&rdquo; category, the function constructs the image URL using the baseUrl and appends &ldquo;img/baking.jpg&rdquo; to it. This process ensures that the image displayed on the recipe card aligns with the category, providing users with a visually cohesive and engaging experience.</p>
+<p>shortenDescription Function: The shortenDescription function focuses on optimizing the presentation of recipe descriptions in the browse page&rsquo;s recipe cards. Given the potential length of recipe descriptions, the function aims to create concise and visually appealing pre-views while maximizing the efficient use of space. To achieve this, the function accepts a de-scription parameter representing the full recipe description.
+Inside the function, a maximum length, denoted as maxLength, is defined to establish the threshold at which descriptions should be shortened. If a description exceeds this length, the function truncates it to fit within the specified limit and appends an ellipsis (&rsquo;&hellip;&rsquo;) to indicate that the full description continues beyond the preview. By doing so, users browsing the recipe cards are provided with essential insights into the recipe&rsquo;s content without overwhelming them with excessive text.</p>
+<p>Both helper functions are seamlessly integrated into the application&rsquo;s templates and rendering processes. getRecipeImage enhances the visual appeal of recipe cards, while shortenDescription ensures that descriptions remain concise and user-friendly. Together, these helper functions contribute to creating an engaging and efficient user interface, enriching the overall RecipeApp experience.</p>
+<h1 id="9strengths-weaknesses-final-reflections">9	Strengths, Weaknesses, Final Reflections</h1>
+<p>The RecipeApp project demonstrates several strengths and weaknesses in its current form. A notable strength lies in its use of a modern technology stack, including Node.js, Mongoose, EJS, and MongoDB, which offers robust community support and adaptability. The app&rsquo;s user-centric design ensures an intuitive and friendly user experience, complemented by a responsive layout that adapts well to different devices and screen sizes. Additionally, its clear API documentation simplifies backend understanding and integration.
+On the flip side, the app exhibits some weaknesses. Its functionality, while adequate for a pro-ject, lacks the depth and breadth of features typically found in commercial-grade applications, such as user accounts and social sharing options. Scalability could be a concern, as the current setup might not efficiently handle a significant increase in concurrent users or data volume. In addition, I would have added a step between the creation of new recipes to the database where added data is moderated and approved/rejected or edited for the purpose of displaying on the webpage.
+Reflecting on the project as a whole, it has been a rewarding endeavor. However, certain challenges, including time constraints and limitations in design creativity and skill, were encountered. Collaboration within a team or soliciting feedback from users for evaluating color palettes and layout choices would have been beneficial. Personally, I would have preferred a cleaner and lighter user interface. These insights highlight opportunities for improvement in future projects, emphasizing the importance of fostering collaboration and refining design elements to enhance overall project quality.</p>
+<p>Considering the time spend on the project and the attempt to incorporate the various challenges from each of the earlier exercises, where they would fit, I believe the project was quite a good solution and personally I would grant it – considering the prerequisite and lower skill levels required on the course – a given strong 1 point or weak 2. Knowing the strong or weak is not a thing that matters on paper I would add it as a 2 point due to use of modules and overall functionality.</p>
+</article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<script type="application/javascript" src='http://localhost:1313/js/toc.js'></script>
+<link rel="stylesheet" href='http://localhost:1313/css/toc.css' />
+
+  
+</div>
+
+  <div class="footer container-xl width-full p-responsive">
+  <div
+    class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between flex-sm-items-center pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
+    <a aria-label="Homepage" title="GitHub" class="footer-octicon d-none d-lg-block mr-lg-4" href="http://localhost:1313/">
+      <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24">
+        <path fill-rule="evenodd"
+          d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+        </path>
+      </svg>
+    </a>
+    <ul class="list-style-none d-flex flex-wrap col-12 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
+      
+      <li class="mr-3 mr-lg-0">Theme by <a href='https://github.com/MeiK2333/github-style'>github-style</a></li>
+      
+      <li class="mr-3 mr-lg-0">GitHub and the Invertocat logo are trademarks of <a href="https://github.com/">GitHub, Inc.</a></li>
+    </ul>
+  </div>
+  <div class="d-flex flex-justify-center pb-6">
+    <span class="f6 text-gray-light"></span>
+  </div>
+
+
+</div>
+
+</body>
+
+<script type="application/javascript" src="http://localhost:1313/js/github-style.js"></script>
+
+
+
+
+
+
+
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script type="application/javascript" src='http://localhost:1313/js/theme-mode.js'></script>
+    <link rel="stylesheet" href='http://localhost:1313/css/frameworks.min.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/github.min.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/github-style.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/light.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/dark.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/syntax.css' />
+    <title>Data Networks Episode 16: IPv6 – Making Things Dual-Stack - Kjersheim - Projects &amp; Docs</title>
+    
+    <link rel="icon" type="image/x-icon" href='http://localhost:1313/images/favicon.ico'>
+    
+    <meta name="theme-color" content="#1e2327">
+
+    
+    
+
+    
+    <meta name="description"
+  content="This episode introduces IPv6 integration into an existing network topology, covering IPv6 subnet planning, manual address configuration on Lubuntu and VyOS devices, enabling dynamic routing with OSPFv3, and verifying connectivity using ping, traceroute, and web/SSH access." />
+<meta name="keywords"
+  content='' />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="http://localhost:1313/post/data-networks-ep16/" />
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Data Networks Episode 16: IPv6 – Making Things Dual-Stack - Kjersheim - Projects &amp; Docs" />
+<meta name="twitter:description"
+  content="This episode introduces IPv6 integration into an existing network topology, covering IPv6 subnet planning, manual address configuration on Lubuntu and VyOS devices, enabling dynamic routing with OSPFv3, and verifying connectivity using ping, traceroute, and web/SSH access." />
+<meta name="twitter:site" content="http://localhost:1313/" />
+<meta name="twitter:creator" content="" />
+<meta name="twitter:image"
+  content="http://localhost:1313/">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Data Networks Episode 16: IPv6 – Making Things Dual-Stack - Kjersheim - Projects &amp; Docs">
+<meta property="og:description"
+  content="This episode introduces IPv6 integration into an existing network topology, covering IPv6 subnet planning, manual address configuration on Lubuntu and VyOS devices, enabling dynamic routing with OSPFv3, and verifying connectivity using ping, traceroute, and web/SSH access." />
+<meta property="og:url" content="http://localhost:1313/post/data-networks-ep16/" />
+<meta property="og:site_name" content="Data Networks Episode 16: IPv6 – Making Things Dual-Stack" />
+<meta property="og:image"
+  content="http://localhost:1313/">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+<meta property="article:published_time" content="2023-04-22 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body>
+  <div style="position: relative">
+  <header class="Header js-details-container Details px-3 px-md-4 px-lg-5 flex-wrap flex-md-nowrap open Details--on">
+    <div class="Header-item mobile-none" style="margin-top: -4px; margin-bottom: -4px;">
+      <a class="Header-link" href="http://localhost:1313/">
+        <img class="octicon" height="32" width="32" src="/images/avatar.svg">
+      </a>
+    </div>
+    <div class="Header-item d-md-none">
+      <button class="Header-link btn-link js-details-target" type="button"
+        onclick="document.querySelector('#header-search').style.display = document.querySelector('#header-search').style.display == 'none'? 'block': 'none'">
+        <svg height="24" class="octicon octicon-three-bars" viewBox="0 0 16 16" version="1.1" width="24">
+          <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z">
+          </path>
+        </svg>
+      </button>
+    </div>
+    <div style="display: none;" id="header-search"
+      class="Header-item Header-item--full flex-column flex-md-row width-full flex-order-2 flex-md-order-none mr-0 mr-md-3 mt-3 mt-md-0 Details-content--hidden-not-important d-md-flex">
+      <div
+        class="Header-search header-search flex-auto js-site-search position-relative flex-self-stretch flex-md-self-auto mb-3 mb-md-0 mr-0 mr-md-3 scoped-search site-scoped-search js-jump-to">
+        <div class="position-relative">
+          
+          <form target="_blank" action="https://www.google.com/search" accept-charset="UTF-8" method="get"
+            autocomplete="off">
+            <label
+              class="Header-search-label form-control input-sm header-search-wrapper p-0 js-chromeless-input-container header-search-wrapper-jump-to position-relative d-flex flex-justify-between flex-items-center">
+              <input type="text"
+                class="Header-search-input form-control input-sm header-search-input jump-to-field js-jump-to-field js-site-search-focus js-site-search-field is-clearable"
+                name="q" value="" placeholder="Search" autocomplete="off">
+              <input type="hidden" name="q" value="site:http://localhost:1313/">
+            </label>
+          </form>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="Header-item Header-item--full flex-justify-center d-md-none position-relative">
+      <a class="Header-link " href="http://localhost:1313/">
+        <img class="octicon octicon-mark-github v-align-middle" height="32" width="32" src="/images/avatar.svg">
+      </a>
+    </div>
+    <div class="Header-item" style="margin-right: 0;">
+      <a href="javascript:void(0)" class="Header-link no-select" onclick="switchTheme()">
+        <svg style="fill: var(--color-profile-color-modes-toggle-moon);" class="no-select" viewBox="0 0 16 16"
+          version="1.1" width="16" height="16">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M4.52208 7.71754C7.5782 7.71754 10.0557 5.24006 10.0557 2.18394C10.0557 1.93498 10.0392 1.68986 10.0074 1.44961C9.95801 1.07727 10.3495 0.771159 10.6474 0.99992C12.1153 2.12716 13.0615 3.89999 13.0615 5.89383C13.0615 9.29958 10.3006 12.0605 6.89485 12.0605C3.95334 12.0605 1.49286 10.001 0.876728 7.24527C0.794841 6.87902 1.23668 6.65289 1.55321 6.85451C2.41106 7.40095 3.4296 7.71754 4.52208 7.71754Z">
+          </path>
+        </svg>
+      </a>
+    </div>
+  </header>
+</div>
+
+  <div id="search-result" class="container-lg px-3 new-discussion-timeline" style="display: none;">
+</div>
+
+  
+<div class="application-main">
+  <div>
+  <main>
+    <div class="gisthead pagehead bg-gray-light pb-0 pt-3 mb-4">
+      <div class="px-0">
+        <div class="mb-3 d-flex px-3 px-md-3 px-lg-5">
+          <div class="flex-auto min-width-0 width-fit mr-3">
+            <div class="d-flex">
+              <div class="d-none d-md-block">
+                <a class="avatar mr-2 flex-shrink-0" href="http://localhost:1313/">
+                  <img class=" avatar-user"
+                    src="/images/avatar.png"
+                    width="32" height="32"></a>
+              </div>
+              <div class="d-flex flex-column">
+                <h1 class="break-word f3 text-normal mb-md-0 mb-1">
+                  <span class="author">
+                    <a href="http://localhost:1313/">Andreas</a>
+                  </span>
+                  <span class="path-divider">/</span>
+                  <strong class="css-truncate css-truncate-target mr-1" style="max-width: 410px">
+                    <a href="http://localhost:1313/post/data-networks-ep16/">Data Networks Episode 16: IPv6 – Making Things Dual-Stack</a>
+                  </strong>
+                </h1>
+                <div class="note m-0">
+                  Created <relative-time datetime="Sat, 22 Apr 2023 00:00:00 &#43;0000"
+                    class="no-wrap">
+                    Sat, 22 Apr 2023 00:00:00 &#43;0000</relative-time>
+
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-lg px-3 new-discussion-timeline">
+      <div class="repository-content gist-content">
+        <div>
+          <div class="js-gist-file-update-container js-task-list-container file-box">
+            <div id="file-pytest" class="file my-2">
+              <div id="post-header" class="file-header d-flex flex-md-items-center flex-items-start sticky-header" style="z-index: 2">
+                <div class="file-info d-flex flex-md-items-center flex-items-start flex-order-1 flex-auto">
+                  <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
+                    
+                    <summary id="toc-toggle" onclick="clickToc()" class="btn btn-octicon m-0 mr-2 p-2">
+                      <svg aria-hidden="true" viewBox="0 0 16 16" height="16" width="16" class="octicon octicon-list-unordered">
+                        <path fill-rule="evenodd" d="M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM3 8a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"></path>
+                      </svg>
+                    </summary>
+                    <details-menu class="SelectMenu" id="toc-details" style="display: none;">
+                      <div class="SelectMenu-modal rounded-3 mt-1" style="max-height: 340px;">
+                        <div class="SelectMenu-list SelectMenu-list--borderless p-2" style="overscroll-behavior: contain;" id="toc-list">
+                        </div>
+                      </div>
+                    </details-menu>
+                      569 Words
+                    
+
+                  </div>
+                  <div class="file-actions flex-order-2 pt-0">
+                    
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="Box-body px-5 pb-5" style="z-index: 1">
+                <article class="markdown-body entry-content container-lg"><h1 id="plan">Plan</h1>
+<ul>
+<li>
+<p><input disabled="" type="checkbox"> Form IPv6 addresses</p>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> Assign addresses to topology</p>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> Manually add IPv6 addresses</p>
+<ul>
+<li><input disabled="" type="checkbox"> Lubuntus</li>
+<li><input disabled="" type="checkbox"> Routers</li>
+</ul>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> Add dynamic routing, OSPFv3</p>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> Verification and connectivity</p>
+</li>
+</ul>
+<h1 id="forming-ipv6-addresses">Forming IPv6 addresses</h1>
+<p><em>Student no. 2208339  // vvxyzki</em></p>
+<p>From the above number I formt he address 2001:2208:339:<!-- raw HTML omitted -->::/64, Which can described as:</p>
+<blockquote>
+<p><img src="/images/network-doc/E16/IPv6address.png" alt=""></p></blockquote>
+<p>This means I have 2001:2208:339:0::/64 to 2001:2208:339:ffff::/64 avaliable for my network within this main subnet, 2001:2208:339::/48.</p>
+<p>As the standard suggested size of a subnet is /64 on IPv6, I plan that size on the workstation subnets around the network. When it comes
+to the network devices, as mentioned in the materials there is an ongoing discussion weather or not to use minimal sized subnets, which would be /127.</p>
+<p>From my understanding, there are plenty of addreses, and despite feeling wasteful it might be fine to select /64 also for my network devices. As stated on multiple forums
+and portals such as StackExchange, /127 is possible with a P2P network where there will ever only be 2 hosts, the two peers, since there are no broadcast addresses and such like
+we have in IPv4.</p>
+<p>However, as some vendor equipment seems to in some instances not allow that size. Using a /127 size address may be harmful if the subnet router is has an anycast address implemented.</p>
+<p>Althoguh, being able to quickly identify or visualize the type of address is favourable in my mind, so I chose to set the subnet size for network devices to /126.
+The exception will be the subnet giving addresses to the switches, which I want to be able to expand without changing major parts of the configuration, so I will set that to the standard /64.
+Loopback addresses will be set to /128, and using the same ID as the IPv4 equivalent for convenience sake.</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Form IPv6 addresses</li>
+</ul>
+<blockquote>
+<p><img src="/images/network-doc/E16/E16IPv6PlanningChartV4.png" alt=""></p></blockquote>
+<h1 id="logical-topology">Logical topology</h1>
+<p>Incorporating the above plans into the logical chart</p>
+<blockquote>
+<p><img src="/images/network-doc/E16/E16NetworkCharts-LogicalTopologyV4.png" alt=""></p></blockquote>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Assign addresses to topology</li>
+</ul>
+<h1 id="assigning-ipv6-addresses">Assigning IPv6 addresses</h1>
+<h2 id="router-a">Router A</h2>
+<pre tabindex="0"><code>set interfaces ethernet eth1 address chosen-ipv6-address
+set interfaces ethernet eth0 vif x address chosen-ipv6-address
+</code></pre><blockquote>
+<p><img src="/images/network-doc/E16/RouterAIPv6.png" alt=""></p></blockquote>
+<h3 id="show-ipv6-route">show ipv6 route</h3>
+<blockquote>
+<p><img src="/images/network-doc/E16/RouterAShowIpv6Route.png" alt=""></p></blockquote>
+<p>The route type, which can be one of the following:</p>
+<p>C - The destination is directly connected to the router.
+S - The route is a static route. (Currently no static routes)
+O - The route is learned from OSPFv3.</p>
+<h2 id="router-b">Router B</h2>
+<blockquote>
+<p><img src="/images/network-doc/E16/RouterBIPv6.png" alt=""></p></blockquote>
+<h3 id="show-ipv6-route-1">show ipv6 route</h3>
+<blockquote>
+<p><img src="/images/network-doc/E16/RouterBShowIpv6Route.png" alt=""></p></blockquote>
+<h2 id="router-c">Router C</h2>
+<blockquote>
+<p><img src="/images/network-doc/E16/RouterCIPv6.png" alt=""></p></blockquote>
+<h3 id="show-ipv6-route-2">show ipv6 route</h3>
+<blockquote>
+<p><img src="/images/network-doc/E16/RouterCShowIpv6Route.png" alt=""></p></blockquote>
+<h3 id="lubuntus">Lubuntus</h3>
+<p>Adding the IPv6 manually based on the topology chart.</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Manually add IPv6 addresses
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Lubuntus</li>
+<li><input checked="" disabled="" type="checkbox"> Routers</li>
+</ul>
+</li>
+</ul>
+<h2 id="enabling-ospfv3">Enabling OSPFv3</h2>
+<p>On all 3 routers, using the IPv4 version of the routers loopback addresses as a router-id.</p>
+<pre tabindex="0"><code>set protocols ospfv4 parameters router-id &lt;ipv4 lo address&gt;
+</code></pre><p>Furthermore, adding each interface to area 0.0.0.0 using</p>
+<pre tabindex="0"><code>set protocols ospfv3 area 0.0.0.0 interface &lt;interface&gt;
+</code></pre><p>Output of the show ipv6 command linked above.</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Add dynamic routing, OSPFv3</li>
+</ul>
+<h1 id="verification-and-connectivity">Verification and connectivity</h1>
+<p>On Lubuntu1 using the command ip addr shows the ipv6 is added:</p>
+<blockquote>
+<p><img src="/images/network-doc/E16/Lubuntu1IP.png" alt=""></p></blockquote>
+<p>From Lubuntu1 I ping the other machines, including LubuntuWAN.</p>
+<blockquote>
+<p><img src="/images/network-doc/E16/Lubuntun1ToAllLubuntus.png" alt=""></p></blockquote>
+<p>LubuntuWAN pinging all routers, and loopback of Router C:</p>
+<blockquote>
+<p><img src="/images/network-doc/E16/LubuntuWANRouters.png" alt=""></p></blockquote>
+<blockquote>
+<p><img src="/images/network-doc/E16/LubuntuWANIPAndRouterC.png" alt=""></p></blockquote>
+<p>Traceroute from LubuntuWAN to Lubuntu1:</p>
+<blockquote>
+<p><img src="/images/network-doc/E16/TRacerouteLubuntuWANLubuntu1.png" alt=""></p></blockquote>
+<blockquote>
+<p><img src="/images/network-doc/E16/TracerouteLubuntu1To2.png" alt=""></p></blockquote>
+<p>Adding IPv6 address with name lubuntu1.ip6 in the /etc/hosts file on LubuntuWAN, testing the address from firefox:</p>
+<blockquote>
+<p><img src="/images/network-doc/E16/httpfromlubuntuwan.png" alt=""></p></blockquote>
+<blockquote>
+<p><img src="/images/network-doc/E16/etchostslubuntuWAN.png" alt=""></p></blockquote>
+<blockquote>
+<p><img src="/images/network-doc/E16/httpname.png" alt=""></p></blockquote>
+<p>SSH connection between Lubuntu2 and Router A:</p>
+<blockquote>
+<p><img src="/images/network-doc/E16/sshroutera.png" alt=""></p></blockquote>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Verification and connectivity</li>
+</ul>
+<h2 id="updated-configuration-files-after-completing-e16">Updated configuration-files after completing E16</h2>
+<p><a href="/images/network-doc/E16/Config_files/E16-SwitchAu.cfg">Network_Switch_A</a><br>
+<a href="/images/network-doc/E16/Config_files/E16-SwitchBu.cfg">Network_Switch_B</a><br>
+<a href="/images/network-doc/E16/Config_files/E16-SwitchCu.cfg">Network_Switch_C</a></p>
+<p><a href="/images/network-doc/E16/Config_files/E16-RouterAu.cfg">Vyos_Router_A</a> <br>
+<a href="/images/network-doc/E16/Config_files/E16-RouterBu.cfg">Vyos_Router_B</a> <br>
+<a href="/images/network-doc/E16/Config_files/E16-RouterCu.cfg">Vyos_Router_C</a></p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Update configuration files with E15 and 16 changes</li>
+</ul>
+<h2 id="notes">Notes</h2>
+<pre tabindex="0"><code>- Can be shortened once with a double colon:
+2010:2222:0000:0005:0000:0000:0000:0002 to 2010:2222:0000:0005::2
+
+0&#39;s can be omitted, but - if the whole 4 hex field is 0000 it needs to be added as 0 total value.
+</code></pre></article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<script type="application/javascript" src='http://localhost:1313/js/toc.js'></script>
+<link rel="stylesheet" href='http://localhost:1313/css/toc.css' />
+
+  
+</div>
+
+  <div class="footer container-xl width-full p-responsive">
+  <div
+    class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between flex-sm-items-center pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
+    <a aria-label="Homepage" title="GitHub" class="footer-octicon d-none d-lg-block mr-lg-4" href="http://localhost:1313/">
+      <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24">
+        <path fill-rule="evenodd"
+          d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+        </path>
+      </svg>
+    </a>
+    <ul class="list-style-none d-flex flex-wrap col-12 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
+      
+      <li class="mr-3 mr-lg-0">Theme by <a href='https://github.com/MeiK2333/github-style'>github-style</a></li>
+      
+      <li class="mr-3 mr-lg-0">GitHub and the Invertocat logo are trademarks of <a href="https://github.com/">GitHub, Inc.</a></li>
+    </ul>
+  </div>
+  <div class="d-flex flex-justify-center pb-6">
+    <span class="f6 text-gray-light"></span>
+  </div>
+
+
+</div>
+
+</body>
+
+<script type="application/javascript" src="http://localhost:1313/js/github-style.js"></script>
+
+
+
+
+
+
+
+</html>

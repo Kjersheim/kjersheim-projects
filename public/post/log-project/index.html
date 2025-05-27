@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script type="application/javascript" src='http://localhost:1313/js/theme-mode.js'></script>
+    <link rel="stylesheet" href='http://localhost:1313/css/frameworks.min.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/github.min.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/github-style.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/light.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/dark.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/syntax.css' />
+    <title>Log Project: Building a Personal Learning Log with Tailwind and Vite - Kjersheim - Projects &amp; Docs</title>
+    
+    <link rel="icon" type="image/x-icon" href='http://localhost:1313/images/favicon.ico'>
+    
+    <meta name="theme-color" content="#1e2327">
+
+    
+    
+
+    
+    <meta name="description"
+  content="A Tailwind and Vite-powered web project documenting the process of creating a responsive learning log from scratch—design, layout, deployment, and lessons learned." />
+<meta name="keywords"
+  content='' />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="http://localhost:1313/post/log-project/" />
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Log Project: Building a Personal Learning Log with Tailwind and Vite - Kjersheim - Projects &amp; Docs" />
+<meta name="twitter:description"
+  content="A Tailwind and Vite-powered web project documenting the process of creating a responsive learning log from scratch—design, layout, deployment, and lessons learned." />
+<meta name="twitter:site" content="http://localhost:1313/" />
+<meta name="twitter:creator" content="" />
+<meta name="twitter:image"
+  content="http://localhost:1313/">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Log Project: Building a Personal Learning Log with Tailwind and Vite - Kjersheim - Projects &amp; Docs">
+<meta property="og:description"
+  content="A Tailwind and Vite-powered web project documenting the process of creating a responsive learning log from scratch—design, layout, deployment, and lessons learned." />
+<meta property="og:url" content="http://localhost:1313/post/log-project/" />
+<meta property="og:site_name" content="Log Project: Building a Personal Learning Log with Tailwind and Vite" />
+<meta property="og:image"
+  content="http://localhost:1313/">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+<meta property="article:published_time" content="2024-12-10 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body>
+  <div style="position: relative">
+  <header class="Header js-details-container Details px-3 px-md-4 px-lg-5 flex-wrap flex-md-nowrap open Details--on">
+    <div class="Header-item mobile-none" style="margin-top: -4px; margin-bottom: -4px;">
+      <a class="Header-link" href="http://localhost:1313/">
+        <img class="octicon" height="32" width="32" src="/images/avatar.svg">
+      </a>
+    </div>
+    <div class="Header-item d-md-none">
+      <button class="Header-link btn-link js-details-target" type="button"
+        onclick="document.querySelector('#header-search').style.display = document.querySelector('#header-search').style.display == 'none'? 'block': 'none'">
+        <svg height="24" class="octicon octicon-three-bars" viewBox="0 0 16 16" version="1.1" width="24">
+          <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z">
+          </path>
+        </svg>
+      </button>
+    </div>
+    <div style="display: none;" id="header-search"
+      class="Header-item Header-item--full flex-column flex-md-row width-full flex-order-2 flex-md-order-none mr-0 mr-md-3 mt-3 mt-md-0 Details-content--hidden-not-important d-md-flex">
+      <div
+        class="Header-search header-search flex-auto js-site-search position-relative flex-self-stretch flex-md-self-auto mb-3 mb-md-0 mr-0 mr-md-3 scoped-search site-scoped-search js-jump-to">
+        <div class="position-relative">
+          
+          <form target="_blank" action="https://www.google.com/search" accept-charset="UTF-8" method="get"
+            autocomplete="off">
+            <label
+              class="Header-search-label form-control input-sm header-search-wrapper p-0 js-chromeless-input-container header-search-wrapper-jump-to position-relative d-flex flex-justify-between flex-items-center">
+              <input type="text"
+                class="Header-search-input form-control input-sm header-search-input jump-to-field js-jump-to-field js-site-search-focus js-site-search-field is-clearable"
+                name="q" value="" placeholder="Search" autocomplete="off">
+              <input type="hidden" name="q" value="site:http://localhost:1313/">
+            </label>
+          </form>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="Header-item Header-item--full flex-justify-center d-md-none position-relative">
+      <a class="Header-link " href="http://localhost:1313/">
+        <img class="octicon octicon-mark-github v-align-middle" height="32" width="32" src="/images/avatar.svg">
+      </a>
+    </div>
+    <div class="Header-item" style="margin-right: 0;">
+      <a href="javascript:void(0)" class="Header-link no-select" onclick="switchTheme()">
+        <svg style="fill: var(--color-profile-color-modes-toggle-moon);" class="no-select" viewBox="0 0 16 16"
+          version="1.1" width="16" height="16">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M4.52208 7.71754C7.5782 7.71754 10.0557 5.24006 10.0557 2.18394C10.0557 1.93498 10.0392 1.68986 10.0074 1.44961C9.95801 1.07727 10.3495 0.771159 10.6474 0.99992C12.1153 2.12716 13.0615 3.89999 13.0615 5.89383C13.0615 9.29958 10.3006 12.0605 6.89485 12.0605C3.95334 12.0605 1.49286 10.001 0.876728 7.24527C0.794841 6.87902 1.23668 6.65289 1.55321 6.85451C2.41106 7.40095 3.4296 7.71754 4.52208 7.71754Z">
+          </path>
+        </svg>
+      </a>
+    </div>
+  </header>
+</div>
+
+  <div id="search-result" class="container-lg px-3 new-discussion-timeline" style="display: none;">
+</div>
+
+  
+<div class="application-main">
+  <div>
+  <main>
+    <div class="gisthead pagehead bg-gray-light pb-0 pt-3 mb-4">
+      <div class="px-0">
+        <div class="mb-3 d-flex px-3 px-md-3 px-lg-5">
+          <div class="flex-auto min-width-0 width-fit mr-3">
+            <div class="d-flex">
+              <div class="d-none d-md-block">
+                <a class="avatar mr-2 flex-shrink-0" href="http://localhost:1313/">
+                  <img class=" avatar-user"
+                    src="/images/avatar.png"
+                    width="32" height="32"></a>
+              </div>
+              <div class="d-flex flex-column">
+                <h1 class="break-word f3 text-normal mb-md-0 mb-1">
+                  <span class="author">
+                    <a href="http://localhost:1313/">Andreas</a>
+                  </span>
+                  <span class="path-divider">/</span>
+                  <strong class="css-truncate css-truncate-target mr-1" style="max-width: 410px">
+                    <a href="http://localhost:1313/post/log-project/">Log Project: Building a Personal Learning Log with Tailwind and Vite</a>
+                  </strong>
+                </h1>
+                <div class="note m-0">
+                  Created <relative-time datetime="Tue, 10 Dec 2024 00:00:00 &#43;0000"
+                    class="no-wrap">
+                    Tue, 10 Dec 2024 00:00:00 &#43;0000</relative-time>
+
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-lg px-3 new-discussion-timeline">
+      <div class="repository-content gist-content">
+        <div>
+          <div class="js-gist-file-update-container js-task-list-container file-box">
+            <div id="file-pytest" class="file my-2">
+              <div id="post-header" class="file-header d-flex flex-md-items-center flex-items-start sticky-header" style="z-index: 2">
+                <div class="file-info d-flex flex-md-items-center flex-items-start flex-order-1 flex-auto">
+                  <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
+                    
+                    <summary id="toc-toggle" onclick="clickToc()" class="btn btn-octicon m-0 mr-2 p-2">
+                      <svg aria-hidden="true" viewBox="0 0 16 16" height="16" width="16" class="octicon octicon-list-unordered">
+                        <path fill-rule="evenodd" d="M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM3 8a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"></path>
+                      </svg>
+                    </summary>
+                    <details-menu class="SelectMenu" id="toc-details" style="display: none;">
+                      <div class="SelectMenu-modal rounded-3 mt-1" style="max-height: 340px;">
+                        <div class="SelectMenu-list SelectMenu-list--borderless p-2" style="overscroll-behavior: contain;" id="toc-list">
+                        </div>
+                      </div>
+                    </details-menu>
+                      1955 Words
+                    
+
+                  </div>
+                  <div class="file-actions flex-order-2 pt-0">
+                    
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="Box-body px-5 pb-5" style="z-index: 1">
+                <article class="markdown-body entry-content container-lg"><h1 id="log-project">log-project</h1>
+<p><a href="https://github.com/Kjersheim/log-project">Link to repository</a></p>
+<h2 id="preview">Preview</h2>
+<p><img src="/images/log-project/Preview.gif" alt="testing deployment"></p>
+<p>I decided to continue using Tailwind for my CSS Library, as this utility-first framework consists of more customizable classes so I can style my own components. While having considered Boot-strap earlier, I felt this might be more based on pre-designed components and other elements such as buttons, navbars and layouts.
+A previous challenge in projects similar to this, is the deployment process. Since we are using the gitlab pages deployment, I was not entirely sure how that would work. Gitlab uses .yml files for the deployment process, and it might be that I need to create a script for this at some point.</p>
+<p>Tailwind does require a build process, as it takes the tailwind styles and whatever I might add as custom styles and uses this to generate the final CSS file. Once the final file is built this is the one being used by our markup. Creating a script in the package.json file that outputs a style.css could be an option, and also something that we could consider to include in the .gitlab-ci.yml file for the gitlab deployment, and additionally make these processes point towards a public folder within my root structure to gather the necessary files for deployment.
+After initializing a project in a new directory named log-project, I installed vite, tailwindcss, postcss and autoprefixer using NPM. Following the tailwind documentation, I initialized tail-windcss using NPX. At this point I had both the package.json for the node project and the tail-wind config file as tailwind.config.js.</p>
+<h2 id="project-catalogue-structure">Project Catalogue Structure</h2>
+<p>After some testing I did find a folder structure that supported some clarity for my own benefit, compartmentalizing some files but not uneccesarily complicated. The folderstructure can be seen below (fig. 1)</p>
+<p><img src="/images/log-project/Picture1.png" alt="Filestructure"></p>
+<p>At this point I created a test page to test deployment, to make sure the configurations did not initially had problems (fig. 2).</p>
+<p><img src="/images/log-project/Picture2.png" alt="testing deployment"></p>
+<h2 id="changes-to-the-initial-prototype">Changes to the initial prototype</h2>
+<p>When I initially started thinking about the plan I had an idea about creating a learning log where I could write articles, mostly for my own benefit from a design perspective as well as a toolbox and archive for later use. A couple years ago I also saw a navigation model I thought were intriguing, where the layout was very text based and clean, and had a colorful object in a corner bringing some focus to the navigation. I wanted to incorporate something similar to this, and navigate it in accordance to the animations and SVG opportunities we have seen through the exercises. However, after a couple weeks of testing different designs and ideas I still did not come up with designs I felt was as I wanted it to be. In most tests it seemed more of a nuisance and distraction rather than a point of interest.</p>
+<p>While the example I saw years ago were very different in some ways, it was more like a visual notebook/pen and paper, the main idea I wanted was ”keep it simple, stupid”. I have always had a tendency to add too much, with too little focus on spacing, sizing, and the hero section. The goal for the final project was to create a practical website, that would be easy to navigate, be responsive to all devices from mobile to large screens and resolutions. Lastly but not least, a website that made the user easily can get information, understand layout and wants to navigate through.</p>
+<h2 id="the-main-layout">The main layout</h2>
+<p>I decided to go with a horizontal top navigation on desktop, as seen in the figure 3 below. An aspect I wanted to keep was little distractions or background noice, and the logo was created with an ascii generator. While this image was not the most responsive, I liked the very simple look and it fit into my idea of clean and an easy color-palette. I added some more colorful tags to get some more colors, which at the same could have functionality to categorize articles. The actual functionality has not been added as it would require more actual articles, and probably be most easy to complete by setting up a database that contain the servers so they can more easily be fetched on search and selections.</p>
+<p>![main layout](/images/log-project/Picture3.png]</p>
+<p>I still wanted to have some useful information in the footer, sticking to the bottom(fig. 4).</p>
+<p><img src="/images/log-project/Picture4.png" alt="footer"></p>
+<p>For smaller screens, the mobile navigation was the first one added to the page, and while it did have a bit different view than the main page I did like how it turned out and the functionality without being too advanced, and different than the 200 hamburger menus I see on a daily basis. I wanted to have a sidebar style of navigation, but I felt it was important to keep the text in the menu as I have seen lectures where despite many icons being clear, most people are not sure without the text. I also added the names to the social medias in the footer for this reason.</p>
+<p>The layout design for the mobile menu was based on a guide by Fireship (<a href="https://youtu.be/pfaSUYaSgRo?si=IQ3onKWwUffZHUTn)">https://youtu.be/pfaSUYaSgRo?si=IQ3onKWwUffZHUTn)</a>. I felt this was a really challenging and good way to start the project, as it did use tailwind. However, the guide used react and had a different setup of the project and parts of the navigation so I did not follow the guide but mostly use the classes for inspiration and a guideline for how it could be put together (fig. 5).</p>
+<p><img src="/images/log-project/Picture5.png" alt="Mobile view"></p>
+<h2 id="other-pages">Other pages</h2>
+<p>For the recent articles page, I wanted to showcase the articles in smaller article styled cards, but with enough information to catch the interest of the reader (fig. 6). Using a grid layout made it much easier to keep the page responsive. Initially I wanted to make use of an ordered grid, but on testing the different layouts and using spans for the top most recent article, I decided to keep it as is. If I had more time for the project, I would change it to order as the other pages. As the cards below were equal  in content and size, I did not feel the need to be able to move certain cards around to different locations, and the general flow on smaller screens followed nicely.</p>
+<p><img src="/images/log-project/Picture6.png" alt="recent articles"></p>
+<p>For the archive page, I wanted a clean simple layout that had a bit more options than the first. The first one is ment only to show the most recent ones, despite having a ”load more” option. I also wanted to explore what options there are for tailwindcss, as so far while I am getting more and more used to using tailwinds classes, there are things of classic CSS or SCSS that would make things a bit easier to manage. For example for grid orders to add ”.” instead of a full empty div that I hid. When looking for components there were a plethora of different sites out there, but the one I looked at the most was probably <a href="https://tailwindui.com/components">https://tailwindui.com/components</a> and <a href="https://www.creative-tim.com/">https://www.creative-tim.com/</a>. From the latter I did find a nice clean component I wanted to make use for the archive page: <a href="https://www.creative-tim.com/twcomponents/component/blog-page">https://www.creative-tim.com/twcomponents/component/blog-page</a></p>
+<p>A lot of time was spent to change and make this component into something that would fit my log-archive. I added categories on the sidebars (but hiding them on medium/small screens), as well as option to browse and a dropdown for newest and oldest. While the actual functionality doesnt work as I have not focused on the backend at all, the idea is there to be shown (fig. 29).</p>
+<p><img src="/images/log-project/Picture7.png" alt="archive page"></p>
+<p>For the final about page, I decided to have a personal touch, and since this is not publicly available I did not consider the contents too hard but still wanted mostly to have some information that is still nice to read and hopefully does not bore the reader to switch to another website. I did go back to the main page as well as the about page and used order to move things around, and once I got back into that it was really rewarding and easy to see how to place objects. I did add a picture I liked to have some options to use for example more picture options as we have been through in the exercises so far, but at the same time I had a focus on creating something clean and that would fit the purpose of the page (fig. 30).</p>
+<p><img src="/images/log-project/Picture8.png" alt="about page"></p>
+<p>In the core CSS file I added some default styles as well as testing @apply on the tags to see how it worked. I also used the tailwindcss config as shown to to the right in the figure to add my own custom class values (fig. 31).</p>
+<p><img src="/images/log-project/Picture9.png" alt="CSS and Tailwind"></p>
+<p>Additionally the plugin i used had some custom styling resets for the form elements, so added the forms plugin (fig. 32). I did have to consider the framework and configuration files throughout the project, as adding new files and paths, changing folders and similar, gave some challenges that I had to figure out, like adding new pages so they would get picked up by vite to be sent to distribute folder, as I did not want to have those as static files in the public folder. Eventually, I did the final build command/ (fig. 33).
+, which pushed the final version to the gitlab deployed pages - not publishing it via github as only the code is available here.</p>
+<p><img src="/images/log-project/Picture10.png" alt="tailwind config"> //</p>
+<p><img src="/images/log-project/Picture11.png" alt="vite config and build"></p>
+<p>For the final thoughts of the learning diary, I have gained a more in-depth understanding of modern web visualization techniques and tech, specially in the meaning of how to structure, style, and a bit of optimization of websites both for user experiences and functionality in mind.</p>
+<p>I have used semantic elements before, but more concise so now. Recognizing how proper structure and semantic tags improve readability and maintainability, and accessability. When it comes to CSS layouts using particularily grid,  I have gained considerably more knowledge. Even though the final project was created slowly throughout some heavy impact from other courses, I was happy with the end result moreso than previous projects. Being able to consider responsiveness in a whole new light of ”easy” is great, instead of ignoring small things that might not in reality be that hard to change.</p>
+<p>Typography have been a big part of the exercises and guides, like the best-practice list, that I keep going back to to check. Understanding the impact of font choices, spacing and line length on readability and how it looks. Animations were interesting to dive into, and I feel I would have wanted to use more animations and keyframes in my final project, at the same time I felt it did not fit with the ideas I had.</p>
+<p>Lastly, for SASS and Tailwind, as I have never used either before – checking differences and how they can complement or replace the ways Ive done things before has been great. Testing components, implementing utility-first approaches, compartmentalizing projects in a different way than I have done before has been interesting. Additionally, I have gained more knowledge on how Gitlab works as that was my chosen deployment site, as I wanted every project in the same repository. I have had some hours checking the yml for the pipeline.</p>
+<p>For the new and challenging aspect, using more responsiveness in pictures did go beyond what I have seen before, setting optimization for devices in a nice way. Understanding how browsers chose images based on DPR and media queries were interesting. For TailwindCSS utility-first approach is useful but takes time to get into, the cheatsheet-pages out there helped out tons to find answers from traditional CSS. With SASS I spent quite some time and did research on troubleshooting build processes with tools like Vite, and updating configurations to seemingly simple things like @use and @import.</p>
+</article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<script type="application/javascript" src='http://localhost:1313/js/toc.js'></script>
+<link rel="stylesheet" href='http://localhost:1313/css/toc.css' />
+
+  
+</div>
+
+  <div class="footer container-xl width-full p-responsive">
+  <div
+    class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between flex-sm-items-center pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
+    <a aria-label="Homepage" title="GitHub" class="footer-octicon d-none d-lg-block mr-lg-4" href="http://localhost:1313/">
+      <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24">
+        <path fill-rule="evenodd"
+          d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+        </path>
+      </svg>
+    </a>
+    <ul class="list-style-none d-flex flex-wrap col-12 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
+      
+      <li class="mr-3 mr-lg-0">Theme by <a href='https://github.com/MeiK2333/github-style'>github-style</a></li>
+      
+      <li class="mr-3 mr-lg-0">GitHub and the Invertocat logo are trademarks of <a href="https://github.com/">GitHub, Inc.</a></li>
+    </ul>
+  </div>
+  <div class="d-flex flex-justify-center pb-6">
+    <span class="f6 text-gray-light"></span>
+  </div>
+
+
+</div>
+
+</body>
+
+<script type="application/javascript" src="http://localhost:1313/js/github-style.js"></script>
+
+
+
+
+
+
+
+</html>
