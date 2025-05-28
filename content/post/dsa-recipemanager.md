@@ -26,26 +26,26 @@ summary: "A python program with a graphical user interface developed using the T
 
 2. Navigate to the optional projects root folder, run python main.py
 
-![Nav and run](images/dsa-app/runapplication.png)
+![Nav and run](/images/dsa-app/runapplication.png)
 
 3. Main window graphical user interface 
 
-![Main window](images/dsa-app/applicationmainwindow.png)
+![Main window]/(images/dsa-app/applicationmainwindow.png)
 
 4. Add recipes
 
-![Add Recipe](images/dsa-app/addrecipes.png)
+![Add Recipe](/images/dsa-app/addrecipes.png)
 
 5. View selected recipes
 
-![View Recipe](images/dsa-app/seerecipes.png)
+![View Recipe](/images/dsa-app/seerecipes.png)
 
 6. Delete unwanted recipes
 
-![Delete Recipe](images/dsa-app/deleterecipe.gif)
+![Delete Recipe](/images/dsa-app/deleterecipe.gif)
 
 7. Check performance of a dictonary vs a list
 
-![Performance module dictonary vs list](images/dsa-app/performance.gif)
+![Performance module dictonary vs list](/images/dsa-app/performance.gif)
 
 
