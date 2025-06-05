@@ -1,6 +1,6 @@
 ---
 title: "Buffer overflow analysis: stack_1"
-date: 2024-01-25
+date: 2024-10-25
 draft: false
 summary: "Exploring an executable through linux and windows, using IDA community edition"
 ---
