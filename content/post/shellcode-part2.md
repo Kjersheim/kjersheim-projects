@@ -217,3 +217,6 @@ Once the payload is written and the vulnerable program (shell_1) is executed usi
 
 In particular, this final test shows the practical impact of buffer overflow vulnerabilities, especially when mitigations like stack canaries or non-executable stacks are absent or weak. It transitions the exercise from a theoretical flag-capturing task to a real-world example of arbitrary code execution using custom shellcode.
 
+# References
+
+Erickson, Jon. Hacking: The Art of Exploitation. 2nd ed., No Starch Press, 2008.

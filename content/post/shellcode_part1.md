@@ -76,3 +76,7 @@ Then replacing the example array in shell_array.sh with the above array from my 
 ![Creating the new array of shellcode](/images/shellcode-part1/10.jpg)
 
 And by that we managed to create a piece of shellcode that did not have any null-bytes, and follows the criteria wanted. A fun introduction!
+
+# References
+
+Erickson, Jon. Hacking: The Art of Exploitation. 2nd ed., No Starch Press, 2008.
