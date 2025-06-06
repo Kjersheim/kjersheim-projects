@@ -3,12 +3,19 @@ languageCode = 'en-us'
 title = 'Kjersheim - Projects & Docs'
 theme = "github-style"
 
+
 [params]
   author = "Andreas"
   description = "Projects, notes, and documentation."
   github = "kjersheim"
   avatar = "/images/avatar.png"
   headerIcon = "/images/avatar.svg"
+  organizations = [
+    { name = "kjersheim", url = "https://github.com/kjersheim" },
+    { name = "GKMbase", url = "https://github.com/GKMbase" }
+  ]
+  linkedin = "kjersheim"
+
 
 [frontmatter]
   lastmod = ["lastmod", ":fileModTime", ":default"]
@@ -17,3 +24,4 @@ theme = "github-style"
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+
